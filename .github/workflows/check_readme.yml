@@ -1,0 +1,19 @@
+name: Check README contains my name
+
+on: [push]
+
+jobs:
+  check-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Check if README contains my name
+        run: |
+          if grep -qi "yagmur" README.md; then
+            echo "Name found in README.md -- all good!"
+          else
+            echo "ERROR: README.md does not contain your name. Add it before committing!"
+            exit 1
+          fi
