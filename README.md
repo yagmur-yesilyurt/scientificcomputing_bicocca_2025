@@ -1,3 +1,4 @@
+**Student: Yagmur Yesilyurt**
 
 # Scientific Computing with Python
 
